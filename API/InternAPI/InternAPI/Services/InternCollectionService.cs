@@ -1,4 +1,6 @@
 ﻿using InternAPI.Models;
+using InternAPI.Settings;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,29 +9,58 @@ namespace InternAPI.Services
 {
     public class InternCollectionService : IInternCollectionService
     {
-        public Task<List<Intern>> GetAll()
+        private readonly IMongoCollection<Intern> _interns;
+
+        public InternCollectionService(IMongoDBSettings mongoDBSettings)
         {
-            throw new NotImplementedException();
+            var client = new MongoClient(mongoDBSettings.ConnectionString);
+            var database = client.GetDatabase(mongoDBSettings.DatabaseName);
+
+            _interns = database.GetCollection<Intern>(mongoDBSettings.InternCollectionName);
         }
 
-        public Task<Intern> Get(Guid id)
+        public async Task<List<Intern>> GetAll()
         {
-            throw new NotImplementedException();
+            return (await _interns.FindAsync(intern => true)).ToList();
         }
 
-        public Task<bool> Create(Intern model)
+        public async Task<Intern> Get(Guid id)
         {
-            throw new NotImplementedException();
+            return (await _interns.FindAsync(intern => intern.id == id)).FirstOrDefault();
         }
 
-        public Task<bool> Delete(Guid id)
+        public async Task<bool> Create(Intern intern)
         {
-            throw new NotImplementedException();
+            if (intern.id == Guid.Empty)
+            {
+                intern.id = Guid.NewGuid();
+            }
+            await _interns.InsertOneAsync(intern);
+            return true;
         }
 
-        public Task<bool> Update(Guid id, Intern model)
+        public async Task<bool> Update(Guid id, Intern intern)
         {
-            throw new NotImplementedException();
+            intern.id = id;
+            var result = await _interns.ReplaceOneAsync(intern => intern.id == id, intern);
+
+            if (result.IsAcknowledged && result.ModifiedCount == 0)
+            {
+                await _interns.InsertOneAsync(intern);
+                return false;
+            }
+
+            return true;
+        }
+
+        public async Task<bool> Delete(Guid id)
+        {
+            var result = await _interns.DeleteOneAsync(intern => intern.id == id);
+            if (!result.IsAcknowledged && result.DeletedCount == 0)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
