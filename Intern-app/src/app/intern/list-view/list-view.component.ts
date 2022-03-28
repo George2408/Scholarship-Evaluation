@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, OnChanges, OnInit, Output } from '@angular/core';
 import { Intern } from 'src/app/Interfaces/intern';
 import { InterServiceService } from 'src/app/Services/inter-service.service';
 
@@ -54,11 +54,7 @@ export class ListViewComponent implements OnInit {
   }
 
   receiveStage($event):void{
-
-    this.getIntern();
-    this._changeDetectorRef.detectChanges();
-
-    this.condition = $event;
+    window.location.reload();
   }
 
 }
