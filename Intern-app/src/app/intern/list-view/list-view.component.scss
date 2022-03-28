@@ -9,6 +9,11 @@
   flex: 1 1 auto;
 }
 
+.update{
+  display: flex;
+
+}
+
 .title {
   color: #0d29ff;
   padding-top: 1.5em;
@@ -23,6 +28,7 @@
 
 .listViewContainer {
   margin-top: 5em;
+  margin-right:5em;
   display: flex;
   flex-direction: row;
   justify-content: center;

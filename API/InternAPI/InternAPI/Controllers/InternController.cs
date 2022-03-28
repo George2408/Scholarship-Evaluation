@@ -42,7 +42,7 @@ namespace InternAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<string>> UpdateNote([FromBody] Intern intern, Guid id)
+        public async Task<ActionResult<string>> UpdateIntern([FromBody] Intern intern, Guid id)
         {
             if (intern == null)
             {

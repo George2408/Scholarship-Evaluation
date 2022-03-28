@@ -15,6 +15,10 @@ export class InterServiceService {
     return this.http.get<Intern[]>(this.APIUrl + '/Intern');
   }
 
+  getInternById(id:string):Observable<Intern>{
+    return this.http.get<Intern>(this.APIUrl + '/Intern'+ `${id}`);
+  }
+
   addIntern(newIntern: Intern) {
     return this.http.post(this.APIUrl + '/Intern', newIntern, {
       responseType: 'text',
@@ -22,7 +26,7 @@ export class InterServiceService {
   }
 
   updateIntern(intern: Intern) {
-    return this.http.put(this.APIUrl + '/Intern', intern, {
+    return this.http.put(this.APIUrl + '/Intern/'+`${intern.id}`,intern, {
       responseType: 'text',
     });
   }
