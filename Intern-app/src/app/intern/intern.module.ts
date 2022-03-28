@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [ListViewComponent, AddInternComponent, UpdateInternComponent],
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     MatButtonModule,
     HttpClientModule,
+    MatTableModule
   ],
 
   exports: [ListViewComponent, AddInternComponent, UpdateInternComponent],

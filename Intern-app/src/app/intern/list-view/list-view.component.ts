@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Intern } from 'src/app/Interfaces/intern';
+import { InterServiceService } from 'src/app/Services/inter-service.service';
 
 @Component({
   selector: 'app-list-view',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListViewComponent implements OnInit {
 
-  constructor() { }
+  interns: Intern[];
+  displayColumns: string[];
+
+  constructor(private _service: InterServiceService) { }
 
   ngOnInit(): void {
+    this._service.getInternsData().subscribe( (interns:Intern[]) =>{
+      this.interns = interns;
+    });
+    this.displayColumns = ['name', 'age', 'dateOfBirth', 'studies', 'mentor', 'delete','update'];
   }
 
 }
