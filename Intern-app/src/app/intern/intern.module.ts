@@ -7,13 +7,25 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [ListViewComponent, AddInternComponent, UpdateInternComponent],
-  imports: [CommonModule, AppRoutingModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, FormsModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    HttpClientModule,
+  ],
 
   exports: [ListViewComponent, AddInternComponent, UpdateInternComponent],
 })
