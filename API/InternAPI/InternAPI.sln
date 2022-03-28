@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternAPI", "InternAPI\InternAPI.csproj", "{F1989B91-5E80-4BC2-A96D-3D6D8A080F24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1989B91-5E80-4BC2-A96D-3D6D8A080F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1989B91-5E80-4BC2-A96D-3D6D8A080F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1989B91-5E80-4BC2-A96D-3D6D8A080F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1989B91-5E80-4BC2-A96D-3D6D8A080F24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0223EA38-6532-4C3A-9470-EE50DA1527DA}
+	EndGlobalSection
+EndGlobal
