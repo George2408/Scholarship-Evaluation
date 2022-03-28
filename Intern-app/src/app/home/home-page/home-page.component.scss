@@ -1,0 +1,32 @@
+.description {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.75em;
+  padding-bottom: 1.75em;
+  background-color: #0d29ff;
+}
+
+.title {
+  font-size:2em;
+}
+
+.mainContent {
+  margin-top: 6.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.button {
+  padding: 7.5em !important;
+  margin-left: 11.5em;
+  margin-right: 11.5em;
+  min-width: unset !important;
+  background-color: #0d29ff;
+  p{
+    font-size:3.5em;
+  }
+}
+
+

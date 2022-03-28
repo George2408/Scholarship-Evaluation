@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-intern',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddInternComponent implements OnInit {
 
+  name = new FormControl('');
+  age = new FormControl('');
+  dateOfBirth = new FormControl(new Date());
+  studies = new FormControl('');
+  mentor = new FormControl('');
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  clickAdd(){
+    
+  }
 }
