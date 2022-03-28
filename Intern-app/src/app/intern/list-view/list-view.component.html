@@ -79,7 +79,11 @@
     </div>
 
     <div *ngIf="condition">
-      <app-update-intern [selectedIntern]="selectedIntern"></app-update-intern>
+      <app-update-intern
+      [selectedIntern]="selectedIntern"
+      (emitUpdateStage)="receiveStage($event)"
+
+      ></app-update-intern>
     </div>
   </div>
 </div>

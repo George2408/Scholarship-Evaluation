@@ -53,4 +53,12 @@ export class ListViewComponent implements OnInit {
     }
   }
 
+  receiveStage($event):void{
+
+    this.getIntern();
+    this._changeDetectorRef.detectChanges();
+
+    this.condition = $event;
+  }
+
 }

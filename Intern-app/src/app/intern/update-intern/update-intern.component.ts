@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Intern } from 'src/app/Interfaces/intern';
@@ -17,6 +17,7 @@ export class UpdateInternComponent implements OnInit {
   mentor = new FormControl('');
 
   @Input() selectedIntern: Intern;
+  @Output() emitUpdateStage = new EventEmitter<boolean>();;
 
   constructor(
     private _service: InterServiceService,
@@ -41,5 +42,6 @@ export class UpdateInternComponent implements OnInit {
       mentor: this.mentor.value,
     };
     this._service.updateIntern(intern).subscribe();
+    this.emitUpdateStage.emit(false);
   }
 }
