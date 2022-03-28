@@ -8,5 +8,7 @@ namespace InternAPI.Models
         public string name { get; set; }  
         public string age { get; set; }
         public DateTime dateOfBirth { get; set; }
+        public string studies { get; set; } 
+        public string mentor  { get; set; }
     }
 }

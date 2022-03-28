@@ -56,7 +56,7 @@ namespace InternAPI.Services
         public async Task<bool> Delete(Guid id)
         {
             var result = await _interns.DeleteOneAsync(intern => intern.id == id);
-            if (!result.IsAcknowledged && result.DeletedCount == 0)
+            if (result.IsAcknowledged && result.DeletedCount == 0)
             {
                 return false;
             }
