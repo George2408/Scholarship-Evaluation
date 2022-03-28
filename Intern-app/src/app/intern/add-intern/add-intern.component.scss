@@ -1,0 +1,29 @@
+.mainContainer {
+  position: relative;
+}
+
+.child {
+  margin-top: 23.5em;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background-color: #0d29ff;
+}
+
+.formSize {
+  min-width: 5em;
+  max-width: 5em;
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+h1{
+  collor:#FFFF0D;
+}
+
+.buttonCollor{
+  collor:#FFFF0D;
+}

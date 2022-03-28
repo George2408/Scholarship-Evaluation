@@ -9,10 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [ListViewComponent, AddInternComponent, UpdateInternComponent],
-  imports: [CommonModule, AppRoutingModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, FormsModule, MatDatepickerModule, MatNativeDateModule],
+  imports: [CommonModule, AppRoutingModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, FormsModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule],
 
   exports: [ListViewComponent, AddInternComponent, UpdateInternComponent],
 })
